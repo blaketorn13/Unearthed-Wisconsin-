@@ -14,15 +14,15 @@
 
     <style>
       :root{
-        --bg:#000; /* SOLID BLACK */
-        --card:rgba(255,255,255,.08);
-        --card2:rgba(255,255,255,.06);
-        --text:rgba(255,255,255,.92);
-        --muted:rgba(255,255,255,.72);
-        --line:rgba(255,255,255,.14);
-        --accent:#8cffc7;
-        --accent2:#61bbff;
-        --warn:#ffd36b;
+        --bg:#c9e265; /* background color */
+        --card:rgba(255,255,255,.78);
+        --card2:rgba(255,255,255,.62);
+        --text:rgba(0,0,0,.92);     /* black font */
+        --muted:rgba(0,0,0,.70);    /* black-ish muted */
+        --line:rgba(0,0,0,.16);     /* darker lines */
+        --accent:#2a7f58;
+        --accent2:#1c6fd6;
+        --warn:#a86b00;
       }
       *{box-sizing:border-box}
       html,body{height:100%}
@@ -38,17 +38,18 @@
         display:flex;align-items:center;justify-content:space-between;
         padding:14px 18px;border-bottom:1px solid var(--line);
         backdrop-filter: blur(10px);
-        background: rgba(0,0,0,0.65);
+        background: rgba(255,255,255,0.70);
       }
       .brand{display:flex;align-items:center;gap:10px}
-      .brandDot{width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(140,255,199,.12)}
+      .brandDot{width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(42,127,88,.14)}
       .brandText{font-weight:800;letter-spacing:.2px}
       .navRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
       .navLink{
         color:var(--muted);text-decoration:none;border:1px solid var(--line);
-        padding:8px 10px;border-radius:10px;display:inline-flex;gap:8px;align-items:center
+        padding:8px 10px;border-radius:10px;display:inline-flex;gap:8px;align-items:center;
+        background: rgba(255,255,255,.40);
       }
-      .navLink:hover{color:var(--text);border-color:rgba(255,255,255,.28)}
+      .navLink:hover{color:var(--text);border-color:rgba(0,0,0,.28)}
       .content{
         width:min(980px, calc(100% - 32px));
         margin:18px auto 24px;flex:1;display:grid;gap:16px;
@@ -57,12 +58,13 @@
         border:1px solid var(--line);
         background: linear-gradient(180deg, var(--card), var(--card2));
         border-radius:18px;padding:18px;
-        box-shadow:0 10px 30px rgba(0,0,0,.25);
+        box-shadow:0 10px 30px rgba(0,0,0,.14);
       }
       .coverWrap{
         position:relative;width:min(420px,100%);margin:0 auto;
         border-radius:18px;overflow:hidden;border:1px solid var(--line);
-        box-shadow:0 14px 40px rgba(0,0,0,.35);
+        box-shadow:0 14px 40px rgba(0,0,0,.18);
+        background: rgba(255,255,255,.30);
       }
       .coverImg{width:100%;height:auto;display:block}
 
@@ -72,14 +74,13 @@
         border-radius:14px;cursor:pointer;
       }
       .hotspot:hover{
-        border-color: rgba(140, 255, 199, 0.9);
-        box-shadow: 0 0 0 6px rgba(140, 255, 199, 0.14);
- include everything else exactly as it is above (your current master file) */
+        border-color: rgba(42, 127, 88, 0.9);
+        box-shadow: 0 0 0 6px rgba(42, 127, 88, 0.18);
       }
       .hotspot:focus-visible{
         outline:none;
-        border-color: rgba(97, 187, 255, 0.95);
-        box-shadow: 0 0 0 6px rgba(97, 187, 255, 0.18);
+        border-color: rgba(28, 111, 214, 0.95);
+        box-shadow: 0 0 0 6px rgba(28, 111, 214, 0.18);
       }
 
       /* Visited stamp overlay (non-clickable) */
@@ -91,27 +92,27 @@
         gap:8px;
         padding:6px 10px;
         border-radius:999px;
-        border:1px solid rgba(255,255,255,.18);
-        background: rgba(0,0,0,.55);
-        color: rgba(255,255,255,.90);
+        border:1px solid rgba(0,0,0,.16);
+        background: rgba(255,255,255,.78);
+        color: rgba(0,0,0,.86);
         font-size:12px;
         backdrop-filter: blur(6px);
       }
       .stampDot{
         width:8px;height:8px;border-radius:999px;
         background: var(--accent);
-        box-shadow:0 0 0 4px rgba(140,255,199,.14);
+        box-shadow:0 0 0 4px rgba(42,127,88,.16);
       }
 
-      /* Extra stamp for “Did You Know?” (optional visual label) */
+      /* Extra stamp for “Did You Know?” */
       .factStamp{
         position:absolute;
         pointer-events:none;
         padding:6px 10px;
         border-radius:999px;
-        border:1px solid rgba(255,255,255,.18);
-        background: rgba(0,0,0,.55);
-        color: rgba(255,255,255,.92);
+        border:1px solid rgba(0,0,0,.16);
+        background: rgba(255,255,255,.78);
+        color: rgba(0,0,0,.88);
         font-size:12px;
         backdrop-filter: blur(6px);
       }
@@ -119,7 +120,7 @@
       .hint{
         border:1px solid var(--line);
         border-radius:18px;padding:14px 16px;
-        background: rgba(255,255,255,.04);
+        background: rgba(255,255,255,.45);
       }
       .hintTitle{font-weight:700;margin-bottom:6px}
       .hintBody{color:var(--muted);line-height:1.45}
@@ -128,26 +129,26 @@
 
       .panel{
         border:1px solid var(--line);
-        background: rgba(0,0,0,.22);
+        background: rgba(255,255,255,.45);
         border-radius:16px;padding:14px;
       }
-      .panel h2{margin:0 0 10px;font-size:16px;color:rgba(255,255,255,.88)}
+      .panel h2{margin:0 0 10px;font-size:16px;color:rgba(0,0,0,.88)}
       .btn{
         display:inline-flex;align-items:center;justify-content:center;
         padding:10px 12px;border-radius:12px;
-        border:1px solid rgba(255,255,255,.18);
-        background: rgba(255,255,255,.06);
+        border:1px solid rgba(0,0,0,.18);
+        background: rgba(255,255,255,.62);
         color:var(--text);text-decoration:none;cursor:pointer;
       }
-      .btn:hover{border-color: rgba(140,255,199,.5); box-shadow:0 0 0 5px rgba(140,255,199,.12)}
+      .btn:hover{border-color: rgba(42,127,88,.55); box-shadow:0 0 0 5px rgba(42,127,88,.14)}
       .btn:disabled{opacity:.5; cursor:not-allowed;}
-      .btn2{border-color: rgba(97,187,255,.35);}
-      .btn2:hover{border-color: rgba(97,187,255,.75); box-shadow:0 0 0 5px rgba(97,187,255,.14);}
-      .footer{color:rgba(255,255,255,.55);text-align:center;padding:18px 10px 24px}
+      .btn2{border-color: rgba(28,111,214,.35);}
+      .btn2:hover{border-color: rgba(28,111,214,.75); box-shadow:0 0 0 5px rgba(28,111,214,.14);}
+      .footer{color:rgba(0,0,0,.60);text-align:center;padding:18px 10px 24px}
       .pill{
         display:inline-flex;align-items:center;gap:8px;
-        padding:8px 10px;border:1px solid rgba(255,255,255,.16);
-        border-radius:999px;background: rgba(255,255,255,.05);
+        padding:8px 10px;border:1px solid rgba(0,0,0,.16);
+        border-radius:999px;background: rgba(255,255,255,.55);
         color:var(--muted);font-size:13px;
       }
 
@@ -156,17 +157,17 @@
       .taskRow{
         display:flex;gap:10px;align-items:flex-start;
         padding:10px;
-        border:1px solid rgba(255,255,255,.12);
+        border:1px solid rgba(0,0,0,.12);
         border-radius:14px;
-        background: rgba(255,255,255,.03);
+        background: rgba(255,255,255,.42);
       }
       .taskRow input{margin-top:3px; transform: scale(1.1);}
-      .taskText{color: rgba(255,255,255,.80); line-height:1.45}
-      .taskDone .taskText{color: rgba(255,255,255,.62); text-decoration: line-through;}
+      .taskText{color: rgba(0,0,0,.80); line-height:1.45}
+      .taskDone .taskText{color: rgba(0,0,0,.62); text-decoration: line-through;}
       .groupTitle{
         margin-top:8px;
         font-weight:800;
-        color: rgba(255,255,255,.88);
+        color: rgba(0,0,0,.88);
         letter-spacing:.2px;
       }
       .smallMuted{color: var(--muted); font-size:13px; line-height:1.45}
@@ -181,9 +182,9 @@
         .kitGrid{grid-template-columns: 1fr 1fr;}
       }
       .kitItem{
-        border:1px solid rgba(255,255,255,.14);
+        border:1px solid rgba(0,0,0,.14);
         border-radius:16px;
-        background: rgba(255,255,255,.03);
+        background: rgba(255,255,255,.45);
         padding:12px;
         display:flex;
         gap:12px;
@@ -192,13 +193,13 @@
       .kitIcon{
         width:38px;height:38px;border-radius:12px;
         display:flex;align-items:center;justify-content:center;
-        background: rgba(140,255,199,.10);
-        border:1px solid rgba(140,255,199,.18);
+        background: rgba(42,127,88,.10);
+        border:1px solid rgba(42,127,88,.22);
         font-size:18px;
         flex: 0 0 auto;
       }
       .kitName{font-weight:900; letter-spacing:.2px}
-      .kitDesc{color: rgba(255,255,255,.72); font-size:13px; line-height:1.45; margin-top:4px;}
+      .kitDesc{color: rgba(0,0,0,.70); font-size:13px; line-height:1.45; margin-top:4px;}
       .tagRow{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
       .tag{
         display:inline-flex;
@@ -206,15 +207,15 @@
         gap:6px;
         padding:6px 10px;
         border-radius:999px;
-        border:1px solid rgba(255,255,255,.14);
-        background: rgba(0,0,0,.18);
-        color: rgba(255,255,255,.78);
+        border:1px solid rgba(0,0,0,.14);
+        background: rgba(255,255,255,.58);
+        color: rgba(0,0,0,.78);
         font-size:12px;
       }
       .warnTag{
-        border-color: rgba(255,211,107,.35);
-        color: rgba(255,211,107,.95);
-        background: rgba(255,211,107,.08);
+        border-color: rgba(168,107,0,.35);
+        color: rgba(128,76,0,.95);
+        background: rgba(255,211,107,.22);
       }
 
       /* Etiquette page styling */
@@ -228,14 +229,14 @@
         margin:0;
         padding-left:18px;
         line-height:1.75;
-        color: rgba(255,255,255,.82);
+        color: rgba(0,0,0,.82);
       }
       .etImage{
         width:100%;
         height:auto;
         display:block;
         border-radius:14px;
-        border:1px solid rgba(255,255,255,.14);
+        border:1px solid rgba(0,0,0,.14);
         margin-top:14px;
       }
 
@@ -248,14 +249,14 @@
         gap:12px;
       }
       .dykItem{
-        border:1px solid rgba(255,255,255,.14);
+        border:1px solid rgba(0,0,0,.14);
         border-radius:16px;
-        background: rgba(255,255,255,.03);
+        background: rgba(255,255,255,.45);
         padding:12px 14px;
         line-height:1.55;
-        color: rgba(255,255,255,.84);
+        color: rgba(0,0,0,.84);
       }
-      .dykItem strong{color: rgba(255,255,255,.95)}
+      .dykItem strong{color: rgba(0,0,0,.95)}
     </style>
   </head>
 
@@ -461,12 +462,11 @@
       function getLoc(id){ return LOCATIONS.find(l => l.id === id); }
 
       // -----------------------------
-      // NEW: Did You Know hotspot (adjust these numbers to sit by your lady explorer)
+      // Did You Know hotspot
       // -----------------------------
       const DID_YOU_KNOW = {
         id: "did-you-know",
         title: "Did You Know?",
-        // TODO: Adjust these % values to match the lady explorer on cover.png
         hotspot: { left: 58, top: 74, width: 34, height: 12 }
       };
 
@@ -540,7 +540,6 @@
                 <a className="navLink" href="#/toolkit">🧰 Toolkit</a>
                 <a className="navLink" href="#/etiquette">📜 Etiquette</a>
                 <a className="navLink" href="#/did-you-know">💡 Did You Know?</a>
-                <span className="pill">Game Map • Tap an icon</span>
               </div>
             </header>
 
@@ -579,7 +578,7 @@
                   </React.Fragment>
                 ))}
 
-                {/* NEW: Did You Know hotspot */}
+                {/* Did You Know hotspot */}
                 <button
                   className="hotspot"
                   style={{
@@ -606,9 +605,9 @@
               </div>
 
               <div className="hint">
-                <div className="hintTitle">How to play</div>
+                <div className="hintTitle">How to use the Unearthed Wisconsin App</div>
                 <div className="hintBody">
-                  Tap a site icon to explore. Or tap <strong>Did You Know?</strong> for fun archaeology facts!
+                  Tap the icon for Lizard Mound, High Cliff, Pike Lake, Aztalan State Park, or Koshkononh Effigy Mounds. See the badges you've collected in the Toolkit. Read the Etiquette and Did You Know? pages by clicking the buttons along the top.
                 </div>
               </div>
             </main>
@@ -628,7 +627,7 @@
               </div>
 
               <div className="navRow">
-                <a className="navLink" href="#/">← Map</a>
+                <a className="navLink" href="#/">← Home</a>
                 <a className="navLink" href="#/toolkit">🧰 Toolkit</a>
                 <a className="navLink" href="#/etiquette">📜 Etiquette</a>
               </div>
@@ -663,7 +662,7 @@
                 </ul>
 
                 <div style={{marginTop:16, display:"flex", gap:10, flexWrap:"wrap"}}>
-                  <a className="btn" href="#/">Back to map</a>
+                  <a className="btn" href="#/">Back to Home</a>
                 </div>
               </div>
             </main>
@@ -683,7 +682,7 @@
               </div>
 
               <div className="navRow">
-                <a className="navLink" href="#/">← Map</a>
+                <a className="navLink" href="#/">← Home</a>
                 <a className="navLink" href="#/toolkit">🧰 Toolkit</a>
               </div>
             </header>
@@ -745,7 +744,7 @@
                 <span className="brandText">Unearthed Wisconsin</span>
               </div>
               <div className="navRow">
-                <a className="navLink" href="#/">← Map</a>
+                <a className="navLink" href="#/">← Home</a>
                 <a className="navLink" href="#/etiquette">📜 Etiquette</a>
                 <a className="navLink" href="#/did-you-know">💡 Did You Know?</a>
                 <button className="btn btn2" type="button" onClick={resetAll}>♻️ Reset Progress</button>
@@ -819,13 +818,13 @@
                   <span className="brandDot" />
                   <span className="brandText">Unearthed Wisconsin</span>
                 </div>
-                <a className="navLink" href="#/">← Map</a>
+                <a className="navLink" href="#/">← Home</a>
               </header>
               <main className="content">
                 <div className="card">
                   <h1>Location not found</h1>
                   <p className="subtitle">That stop isn’t in the list yet.</p>
-                  <a className="btn" href="#/">Back to map</a>
+                  <a className="btn" href="#/">Back to Home</a>
                 </div>
               </main>
             </div>
@@ -909,7 +908,7 @@
               </div>
 
               <div className="navRow">
-                <a className="navLink" href="#/">← Map</a>
+                <a className="navLink" href="#/">← Home</a>
                 <a className="navLink" href="#/toolkit">🧰 Toolkit</a>
                 <a className="navLink" href="#/etiquette">📜 Etiquette</a>
                 <a className="navLink" href="#/did-you-know">💡 Did You Know?</a>
@@ -940,7 +939,7 @@
                     <h2>Facts</h2>
                     <ul style={{margin: 0, paddingLeft: 18, lineHeight: 1.6}}>
                       {loc.facts.map((fact, index) => (
-                        <li key={index} style={{color: "rgba(255,255,255,.78)"}}>
+                        <li key={index} style={{color: "rgba(0,0,0,.78)"}}>
                           {fact}
                         </li>
                       ))}
@@ -957,7 +956,7 @@
                           key={src}
                           src={src}
                           alt={`${loc.title} photo`}
-                          style={{width:"100%", borderRadius:12, border:"1px solid rgba(255,255,255,.14)"}}
+                          style={{width:"100%", borderRadius:12, border:"1px solid rgba(0,0,0,.14)"}}
                         />
                       ))}
                     </div>
@@ -1030,7 +1029,7 @@
                                   onClick={() => earnToolkitItem(item.id)}
                                   disabled={already || !eligible}
                                 >
-                                  Earned
+                                  Click To Collect
                                 </button>
                               </div>
                             </div>
@@ -1042,7 +1041,7 @@
                 ) : null}
 
                 <div style={{marginTop:16, display:"flex", gap:10, flexWrap:"wrap"}}>
-                  <a className="btn" href="#/">Back to map</a>
+                  <a className="btn" href="#/">Back to Home</a>
                   <a className="btn btn2" href="#/toolkit">View Tool Kit</a>
                 </div>
               </div>
@@ -1077,6 +1076,7 @@
     </script>
   </body>
 </html>
+
 
 
 
